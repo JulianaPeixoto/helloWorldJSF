@@ -124,14 +124,14 @@ public class Pessoa implements Serializable{
         this.sexo = sexo;
     }
 
-    public Endereco getEndereco() {
+    /*public Endereco getEndereco() {
         return Endereco;
     }
 
     public void setEndereco(Endereco Endereco) {
         this.Endereco = Endereco;
     }
-    
+    */
 
     @Override
     public int hashCode() {
