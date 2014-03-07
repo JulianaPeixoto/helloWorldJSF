@@ -46,7 +46,7 @@ public class Endereco implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @ForeignKey(name="FK_Endereco_TipoLogradouro")
     @JoinColumn(name = "IdTipoLogradouro", referencedColumnName = "IdTipoLogradouro")
-    private TipoLogradouro tipologradouro;
+    private TipoLogradouro tipoLogradouro;
     
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @ForeignKey(name="FK_Endereco_Estado")
@@ -56,7 +56,7 @@ public class Endereco implements Serializable {
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @ForeignKey(name="FK_Endereco_TipoEndereco")
     @JoinColumn(name = "IdTipoEndereco", referencedColumnName="IdTipoEndereco")
-    private TipoEndereco tipoendereco;
+    private TipoEndereco tipoEndereco;
     
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @ForeignKey(name="FK_Endereco_Cidade")
@@ -66,8 +66,8 @@ public class Endereco implements Serializable {
     public Endereco() {
         this.cidade = new Cidade();
         this.estado = new Estado();
-        this.tipologradouro = new TipoLogradouro();
-        this.tipoendereco = new TipoEndereco();
+        this.tipoLogradouro = new TipoLogradouro();
+        this.tipoEndereco = new TipoEndereco();
         this.pessoa = new Pessoa();
     }    
     
@@ -136,19 +136,19 @@ public class Endereco implements Serializable {
     }
 
     public TipoEndereco getTipoendereco() {
-        return tipoendereco;
+        return tipoEndereco;
     }
 
     public void setTipoendereco(TipoEndereco tipoendereco) {
-        this.tipoendereco = tipoendereco;
+        this.tipoEndereco = tipoendereco;
     }
 
     public TipoLogradouro getTipologradouro() {
-        return tipologradouro;
+        return tipoLogradouro;
     }
 
     public void setTipologradouro(TipoLogradouro tipologradouro) {
-        this.tipologradouro = tipologradouro;
+        this.tipoLogradouro = tipologradouro;
     }
 
     public Cidade getCidade() {
